@@ -2644,7 +2644,7 @@ declare namespace monaco.editor {
          * Remove unusual line terminators like LINE SEPARATOR (LS), PARAGRAPH SEPARATOR (PS).
          * Defaults to 'prompt'.
          */
-        unusualLineTerminators?: 'off' | 'prompt' | 'auto';
+        unusualLineTerminators?: 'auto' | 'off' | 'prompt';
         /**
          * Should the corresponding line be selected when clicking on the line number?
          * Defaults to true.
@@ -4086,7 +4086,7 @@ declare namespace monaco.editor {
         suggestSelection: IEditorOption<EditorOption.suggestSelection, 'first' | 'recentlyUsed' | 'recentlyUsedByPrefix'>;
         tabCompletion: IEditorOption<EditorOption.tabCompletion, 'on' | 'off' | 'onlySnippets'>;
         tabIndex: IEditorOption<EditorOption.tabIndex, number>;
-        unusualLineTerminators: IEditorOption<EditorOption.unusualLineTerminators, 'off' | 'prompt' | 'auto'>;
+        unusualLineTerminators: IEditorOption<EditorOption.unusualLineTerminators, 'auto' | 'off' | 'prompt'>;
         useTabStops: IEditorOption<EditorOption.useTabStops, boolean>;
         wordSeparators: IEditorOption<EditorOption.wordSeparators, string>;
         wordWrap: IEditorOption<EditorOption.wordWrap, 'on' | 'off' | 'wordWrapColumn' | 'bounded'>;
@@ -6797,6 +6797,7 @@ declare namespace monaco.languages.typescript {
          * @returns `Promise<typescript.NavigationBarItem[]>`
          */
         getNavigationBarItems(fileName: string): Promise<any[]>;
+        getNavigationTree(fileName: string): Promise<any>;
         /**
          * Get changes which should be applied to format the given file.
          * @param options `typescript.FormatCodeOptions`
